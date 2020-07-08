@@ -21,9 +21,9 @@ def find_in_inventory(itemId):
 
 def process_order(cart):
     add_breadcrumb(
-    category='Process Order',
-    message='Step taken to process an order',
-    level='error',
+        category='Process Order',
+        message='Step taken to process an order',
+        level='info',
     )
     global InventoryData
     tempInventory = InventoryData
