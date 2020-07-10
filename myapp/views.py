@@ -79,9 +79,9 @@ class InventoreyView(SentryContextMixin, APIView):
 class HandledErrorView(APIView):
     def get(self, request):
         add_breadcrumb(
-        category='handled',
-        message='In the handled function',
-        level='error',
+            category='URL Endpoints',
+            message='In the handled function',
+            level='info',
         )     
         try:
             '2' + 2
@@ -92,9 +92,9 @@ class HandledErrorView(APIView):
 class UnHandledErrorView(APIView):
      def get(self, request):
         add_breadcrumb(
-        category='unhandled',
-        message='In the unhandled function',
-        level='error',
+            category='URL Endpoints',
+            message='In the unhandled function',
+            level='info',
         )      
         obj = {}
         obj['keyDoesntExist']
@@ -103,11 +103,15 @@ class UnHandledErrorView(APIView):
 class CaptureMessageView(APIView):
     def get(self, request):
         add_breadcrumb(
-        category='message',
-        message='In the Capture Message function',
-        level='error',
+            category='URL Endpoints',
+            message='In the Capture Message function',
+            level='info',
         )     
         sentry_sdk.capture_message("You caught me!")
+
         return Response()
+
+
+        
 
 
